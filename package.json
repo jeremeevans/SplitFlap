@@ -1,0 +1,51 @@
+{
+  "name": "litdevcontainer",
+  "version": "1.0.0",
+  "description": "Base project for building a Lit web component inside a Visual Studio Code development container",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "build:watch": "rimraf dist && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --watch",
+    "start": "web-dev-server --watch",
+    "dev": "npm run start & npm run build:watch",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test start http://localhost:8000 cy:run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremeevans/LitDevContainer.git"
+  },
+  "keywords": [
+    "Lit",
+    "Development",
+    "Container"
+  ],
+  "author": "Jereme Evans",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeremeevans/LitDevContainer/issues"
+  },
+  "homepage": "https://github.com/jeremeevans/LitDevContainer#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.4",
+    "@types/postcss-url": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
+    "@web/dev-server": "^0.1.34",
+    "@webcomponents/webcomponentsjs": "^2.6.0",
+    "cypress": "^10.6.0",
+    "eslint": "^8.22.0",
+    "lit": "^2.3.0",
+    "postcss-url": "^10.1.3",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.78.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-postcss-lit": "^2.0.0",
+    "rollup-plugin-summary": "^1.4.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.54.4",
+    "start-server-and-test": "^1.14.0"
+  }
+}
