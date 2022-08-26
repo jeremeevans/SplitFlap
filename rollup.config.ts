@@ -8,7 +8,7 @@ import summary from "rollup-plugin-summary"
 import { nodeResolve } from "@rollup/plugin-node-resolve"
 
 export default defineConfig({
-  input: "./src/example-element.ts",
+  input: "./src/split-flap.ts",
   plugins: [
     nodeResolve(),
     typescript(),

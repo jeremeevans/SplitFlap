@@ -1,0 +1,103 @@
+:root {
+  --split-flap-font-color: black;
+  --split-flap-font-weight: bold;
+  --split-flap-font-size: 36px;
+  --split-flap-font-family: monospace;
+  --split-flap-padding: 6px;
+  --split-flap-border-radius: 4px;
+  --split-flap-background: white;
+  --split-flap-separator: 1px solid #ccc;
+}
+
+:host {
+  display: block;
+  width: min-content;
+  font: var(--split-flap-font-weight) var(--split-flap-font-size) /
+    var(--split-flap-font-size) var(--split-flap-font-family);
+  color: var(--split-flap-font-color);
+
+  * {
+    box-sizing: border-box;
+  }
+
+  section {
+    width: min-content;
+    display: grid;
+
+    div.letter {
+      grid-template-rows: 2;
+      position: relative;
+      display: grid;
+      width: min-content;
+
+      > div {
+        grid-column: 1;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 1.35em;
+        margin: 2px;
+        padding: var(--split-flap-padding);
+        font-size: var(--split-flap-font-size);
+        height: calc(
+          (var(--split-flap-font-size) + var(--split-flap-padding) * 2) / 2
+        );
+        overflow-y: clip;
+        background: var(--split-flap-background);
+
+        &.top {
+          grid-row: 1;
+          margin-bottom: 0;
+          border-bottom: var(--split-flap-separator);
+          border-top-left-radius: var(--split-flap-border-radius);
+          border-top-right-radius: var(--split-flap-border-radius);
+        }
+
+        &.blank,
+        &.bottom,
+        &.back {
+          grid-row: 2;
+          margin-top: 0;
+          border-bottom-left-radius: var(--split-flap-border-radius);
+          border-bottom-right-radius: var(--split-flap-border-radius);
+        }
+
+        &.blank {
+          border-top: var(--split-flap-separator);
+        }
+
+        &.bottom,
+        &.back {
+          transform-origin: center top;
+          transform-style: preserve-3d;
+          backface-visibility: hidden;
+          transition: transform ease-out 500ms;
+        }
+
+        &.bottom {
+          position: relative;
+          transform: rotateX(180deg);
+
+          span {
+            position: absolute;
+            top: calc((var(--split-flap-font-size) - 2px) / -2);
+          }
+        }
+
+        &.back {
+          transform: rotateX(180deg) rotateY(180deg) translateZ(0.5px);
+        }
+      }
+
+      &.revealed {
+        div.bottom {
+          transform: rotateX(0deg);
+        }
+
+        div.back {
+          transform: rotateX(0deg) rotateY(180deg);
+        }
+      }
+    }
+  }
+}

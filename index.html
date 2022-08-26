@@ -3,20 +3,35 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>example-element Demo</title>
+    <title>split-flap Demo</title>
     <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="./node_modules/lit/polyfill-support.js"></script>
-    <script type="module" src="./dist/example-element.bundled.js"></script>
+    <script type="module" src="./dist/split-flap.bundled.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      p {
-        border: solid 1px blue;
-        padding: 8px;
+      html {
+        height: 100%;
+      }
+
+      body {
+        font-family: "Courier Prime", monospace;
+        background-color: #444;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        height: 100%;
       }
     </style>
   </head>
   <body>
-    <example-element>
-      <p>This is child content</p>
-    </example-element>
+    <split-flap
+      message="Fiddle
+Leaf Fig"
+    ></split-flap>
   </body>
 </html>

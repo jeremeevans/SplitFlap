@@ -1,8 +1,8 @@
 {
-  "name": "litdevcontainer",
-  "version": "1.0.0",
+  "name": "split-flap",
+  "version": "0.1.3",
   "description": "Base project for building a Lit web component inside a Visual Studio Code development container",
-  "main": "index.js",
+  "main": "dist/split-flap.bundled.js",
   "scripts": {
     "build": "rimraf dist && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "build:watch": "rimraf dist && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --watch",
@@ -13,19 +13,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jeremeevans/LitDevContainer.git"
+    "url": "git+https://github.com/jeremeevans/SplitFlap.git"
   },
   "keywords": [
-    "Lit",
-    "Development",
-    "Container"
+    "split",
+    "flap",
+    "split flap"
   ],
   "author": "Jereme Evans",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jeremeevans/LitDevContainer/issues"
+    "url": "https://github.com/jeremeevans/SplitFlap/issues"
   },
-  "homepage": "https://github.com/jeremeevans/LitDevContainer#readme",
+  "homepage": "https://github.com/jeremeevans/SplitFlap#readme",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.4",
